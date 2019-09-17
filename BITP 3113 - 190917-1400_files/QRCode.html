@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)https://kuliah.utem.edu.my/QRCode.aspx -->
+<html><script src="chrome-extension://ljdobmomdgdljniojadhoplhkpialdid/page/prompt.js"></script><script src="chrome-extension://ljdobmomdgdljniojadhoplhkpialdid/page/runScript.js"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>QR Generate</title><link rel="stylesheet" href="./bootstrap.min.css">
+    <script src="./jquery.min.js.download"></script>
+    <script src="./bootstrap.min.js.download"></script>
+       <style type="text/css">
+        .Initial
+        {
+            display: block;
+            padding: 4px 18px 4px 18px;
+            float: left;
+            background: url("../Images/InitialImage.png") no-repeat right top;
+            color: Black;
+            font-weight: bold;
+        }
+        .Initial:hover
+        {
+            color: White;
+            background: url("../Images/SelectedButton.png") no-repeat right top;
+        }
+        .Clicked
+        {
+            float: left;
+            display: block;
+            background: url("../Images/SelectedButton.png") no-repeat right top;
+            padding: 4px 18px 4px 18px;
+            color: Black;
+            font-weight: bold;
+            color: White;
+        }
+    </style>
+
+        <link href="./tablex.css" rel="stylesheet">
+    <style type="text/css">
+        .auto-style1 {
+            width: 256px;
+        }
+        .auto-style2 {
+            width: 256px;
+            height: 37px;
+        }
+        .auto-style3 {
+            height: 37px;
+        }
+        .auto-style4 {
+            width: 721px;
+            height: 170px;
+        }
+        .auto-style5 {
+            width: 532px;
+        }
+        .auto-style6 {
+            width: 203px;
+        }
+        .auto-style7 {
+            width: 100px;
+        }
+        .auto-style8 {
+            width: 100px;
+            height: 68px;
+        }
+        .auto-style9 {
+            height: 68px;
+        }
+        </style>
+
+    <script src="./jquery.min.js(1).download"></script>
+<script src="./moment.min.js.download"></script>
+<script src="./bootstrap.min.js(1).download"></script>
+<script src="./bootstrap-datetimepicker.min.js.download"></script>
+
+<link rel="stylesheet" href="./bootstrap.min(1).css"><link rel="stylesheet" href="./bootstrap-datetimepicker.min.css">
+<script>
+    $(function () {
+
+//$('#datetimepicker1').datetimepicker({
+ //   format: 'DD-MM-YYYY HH:mm'
+ //       });
+ $('#datetimepicker1').datetimepicker(
+     { format: 'DD-MM-YYYY HH:00:00' }).on('dp.change', function (e) { SimpanPen2(); });
+
+ $('#datetimepicker2').datetimepicker(
+     { format: 'DD-MM-YYYY HH:00:00' }).on('dp.change', function (e) { document.getElementById('JamKuliah').value=""; });
+
+  //      $('#datetimepicker2').datetimepicker({
+  //  format: 'DD-MM-YYYY HH:mm'
+   //    });
+
+
+
+
+ //    $('#datetimepicker1').datetimepicker();
+ //   $('#datetimepicker2').datetimepicker();
+   //  $('#datetimepicker1').datetimepicker({
+   // ignoreReadonly: false
+ // });
+});
+</script>
+  
+   <script type="text/javascript">
+    //   alert('ddd' + document.getElementById('#TotcustId').innerHTML);
+      //  document.getElementById('TotcustId').value = "3";
+        var yourPostJsonObject = {
+            
+   "tot_rec": "0",
+   "transaction_status": "3",
+   "transaction_id": "b7c8cfa9-b706-4a9d-b70d-8d70149145bd",
+   "status_message": "Veritrans payment notification",
+   "status_code": "200",
+   "signature_key": "b22b5740bf2c587ba949ae5343757a66e5a75c45b9377b9ee891909bbd8977bb2caea8e0549bf09b5040b22f54efc76aa8beb31e321f9d600f267b23f37b30ae",
+   "payment_type": "credit_card",
+   "order_id": "LUHUMMLWOT",
+   "masked_card": "401111-1112",
+   "gross_amount": "326000.00",
+   "fraud_status": "accept",
+   "bank": "mandiri",
+   "approval_code": "1505702878234"
+        }
+ 
+        $(document).ready(function (e) {
+     //   function test() { <td>' + emp.Position + '</td>
+            // alert('okk' + document.getElementById('TotcustId').value);
+            $.ajax({
+                url: 'EmployeeService.asmx/GetAllEmployb',
+                dataType: "json",
+                method: 'post',
+                cache: false,
+                data: { jsonReceiverInCsharpObjecName: JSON.stringify(yourPostJsonObject) },
+                success: function (data) {
+                    var employeeTable = $('#tblEmployee tbody');
+                    employeeTable.empty();
+                    $(data).each(function (index, emp) {
+
+                        if (emp.Position == "LastRec") {
+                            document.getElementById('TotcustId').value = emp.Name;
+                        } else {
+                            employeeTable.append('<tr><td>' + emp.ID + '</td><td>' + emp.BIL + '</td><td>'
+                                + emp.Name + '</td><td>' + emp.Office
+                                + '</td><td>' + emp.Age + '</td><td>' + emp.Salary + '</td><td>' + emp.Kategori + '</td></tr>');
+                        }
+                    });
+                },
+                error: function (err) {
+                    alert('err1 ' + err);
+                }
+            });
+      //  }
+           // e.preventDefault();
+            return false;
+        });
+    </script>
+</head>
+<body onload="startTime2();startTime();Clear();" style="zoom: 1;">
+  <form method="post" action="https://kuliah.utem.edu.my/QRCode.aspx" id="form1">
+<div class="aspNetHidden">
+
+
+
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="./WebResource.axd" type="text/javascript"></script>
+
+
+<script src="./ScriptResource.axd" type="text/javascript"></script>
+<script src="./ScriptResource(1).axd" type="text/javascript"></script>
+<script src="./ScriptResource(2).axd" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+var PageMethods = function() {
+PageMethods.initializeBase(this);
+this._timeout = 0;
+this._userContext = null;
+this._succeeded = null;
+this._failed = null;
+}
+PageMethods.prototype = {
+_get_path:function() {
+ var p = this.get_path();
+ if (p) return p;
+ else return PageMethods._staticInstance.get_path();},
+AddTwoNumbers:function(firstNumber,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'AddTwoNumbers',false,{firstNumber:firstNumber},succeededCallback,failedCallback,userContext); },
+AddTwoNumbersx:function(firstNumber,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'AddTwoNumbersx',false,{firstNumber:firstNumber},succeededCallback,failedCallback,userContext); },
+Simpan:function(firstNumber,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'Simpan',false,{firstNumber:firstNumber},succeededCallback,failedCallback,userContext); },
+SimpanPen:function(startdate,enddate,kodsubject,Kategori,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'SimpanPen',false,{startdate:startdate,enddate:enddate,kodsubject:kodsubject,Kategori:Kategori},succeededCallback,failedCallback,userContext); },
+HapusPen:function(kodsubject,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'HapusPen',false,{kodsubject:kodsubject},succeededCallback,failedCallback,userContext); },
+SimpanPen2:function(startdate,enddate,jam,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'SimpanPen2',false,{startdate:startdate,enddate:enddate,jam:jam},succeededCallback,failedCallback,userContext); }}
+PageMethods.registerClass('PageMethods',Sys.Net.WebServiceProxy);
+PageMethods._staticInstance = new PageMethods();
+PageMethods.set_path = function(value) { PageMethods._staticInstance.set_path(value); }
+PageMethods.get_path = function() { return PageMethods._staticInstance.get_path(); }
+PageMethods.set_timeout = function(value) { PageMethods._staticInstance.set_timeout(value); }
+PageMethods.get_timeout = function() { return PageMethods._staticInstance.get_timeout(); }
+PageMethods.set_defaultUserContext = function(value) { PageMethods._staticInstance.set_defaultUserContext(value); }
+PageMethods.get_defaultUserContext = function() { return PageMethods._staticInstance.get_defaultUserContext(); }
+PageMethods.set_defaultSucceededCallback = function(value) { PageMethods._staticInstance.set_defaultSucceededCallback(value); }
+PageMethods.get_defaultSucceededCallback = function() { return PageMethods._staticInstance.get_defaultSucceededCallback(); }
+PageMethods.set_defaultFailedCallback = function(value) { PageMethods._staticInstance.set_defaultFailedCallback(value); }
+PageMethods.get_defaultFailedCallback = function() { return PageMethods._staticInstance.get_defaultFailedCallback(); }
+PageMethods.set_enableJsonp = function(value) { PageMethods._staticInstance.set_enableJsonp(value); }
+PageMethods.get_enableJsonp = function() { return PageMethods._staticInstance.get_enableJsonp(); }
+PageMethods.set_jsonpCallbackParameter = function(value) { PageMethods._staticInstance.set_jsonpCallbackParameter(value); }
+PageMethods.get_jsonpCallbackParameter = function() { return PageMethods._staticInstance.get_jsonpCallbackParameter(); }
+PageMethods.set_path("QRCode.aspx");
+PageMethods.AddTwoNumbers= function(firstNumber,onSuccess,onFailed,userContext) {PageMethods._staticInstance.AddTwoNumbers(firstNumber,onSuccess,onFailed,userContext); }
+PageMethods.AddTwoNumbersx= function(firstNumber,onSuccess,onFailed,userContext) {PageMethods._staticInstance.AddTwoNumbersx(firstNumber,onSuccess,onFailed,userContext); }
+PageMethods.Simpan= function(firstNumber,onSuccess,onFailed,userContext) {PageMethods._staticInstance.Simpan(firstNumber,onSuccess,onFailed,userContext); }
+PageMethods.SimpanPen= function(startdate,enddate,kodsubject,Kategori,onSuccess,onFailed,userContext) {PageMethods._staticInstance.SimpanPen(startdate,enddate,kodsubject,Kategori,onSuccess,onFailed,userContext); }
+PageMethods.HapusPen= function(kodsubject,onSuccess,onFailed,userContext) {PageMethods._staticInstance.HapusPen(kodsubject,onSuccess,onFailed,userContext); }
+PageMethods.SimpanPen2= function(startdate,enddate,jam,onSuccess,onFailed,userContext) {PageMethods._staticInstance.SimpanPen2(startdate,enddate,jam,onSuccess,onFailed,userContext); }
+//]]>
+</script>
+
+<div class="aspNetHidden">
+
+	
+	
+</div>
+
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'form1', ['tUpdatePanel1','UpdatePanel1'], ['Timer1','Timer1'], [], 90, '');
+//]]>
+</script>
+
+         <br>
+
+  
+
+       
+       &nbsp;<table width="80%" align="center">
+           <tbody><tr>
+<td>
+     Pengguna ID : 
+                                                        <span id="Label7">02612</span>
+      <span id="tokenExAt" style="display: none;">9/17/2019 9:57:50 PM</span>
+      <span id="tokenExIn" style="display: none;">80</span>
+
+</td>
+           </tr>
+        <tr>
+            <td>
+                <input type="submit" name="Tab1" value="Papar QR Code" id="Tab1" class="Clicked" style="border-style:None;">
+                <input type="submit" name="Tab2" value="Maklumat Kuliah" id="Tab2" class="Initial" style="border-style:None;">
+                <input type="submit" name="Tab3" value="Daftar Kuliah" id="Tab3" class="Initial" style="border-style:None;">
+                <input type="submit" name="Tab4" value="Logout" onclick="return confirm(&#39;Anda pasti keluar sistem ?&#39;);" id="Tab4" class="Initial" style="border-style:None;">
+                
+                <table style="width: 100%; border-width: 1px; border-color: #666; border-style: solid">
+                    <tbody><tr>
+                    <td>
+                      
+                                 <br>
+                               <h6 class="text-uppercase text-left"> <span id="Label9x" style="color:Black;font-weight:bold;">Kuliah ID : 2537 [BITP3113--PENGATURCARAAN BERORIENTASIKAN OBJEK]</span></h6>
+                                     <table class="auto-style5">
+                                                <tbody><tr>
+                                                    <th colspan="2">Kemasukan &nbsp;Kehadiran &nbsp;Pelajar</th>
+                                                </tr>
+                                                <tr>
+                                                    <td class="auto-style7"><span style="font-weight:bold">Matrik No</span></td>
+                                                    <td class="auto-style6">
+                                                        <input name="MatrikID" type="text" id="MatrikID" onkeypress="return ClearMessage2();" onfocus="ClearMessage();" style="width:110px;">
+                                                        <button id="Button4x0" onclick="return AddTwoNumbersx();" type="button">
+                                                            Cari
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="auto-style7"></td>
+                                                    <td class="auto-style12">
+                                                        <span id="Label6" style="color: green;">Berjaya daftar kuliah untuk pelajar Matrik no b031910220</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="auto-style7">
+                                     
+                                                         <button id="Button5y" type="button" onclick="return Clear();">Clear</button>
+                                                    </td>
+                                                    <td class="auto-style18">
+                                                       
+                                                          <button id="Button4y" type="button" onclick="return Simpan();" style="visibility: hidden;">Daftar</button>
+                                                           
+                                                    </td>
+                                                </tr>
+
+                                                  </tbody></table>
+
+ <table border="0">
+                                <tbody><tr>
+                                    <th colspan="2"></th>
+                                </tr>
+                                    <tr>
+                                        <td class="auto-style1"><span style="font-weight:bold"></span></td>
+                                        <td>
+                                            <span id="Label3x" style="display: none;">BITP3113--PENGATURCARAAN BERORIENTASIKAN OBJEK]</span>
+                                            <span id="Label3" style="display: none;">Kuliah ID : 2543 [BITS3423--KESELAMATAN TEKNOLOGI MAKLUMAT]</span>
+                                        </td>
+                                </tr>
+                                <tr>
+                                    <td class="auto-style1"><span style="font-weight:bold"></span></td>
+                                    <td>
+                                        <span id="Label4" style="display: none;">9/17/2019 4:00:00 PM - 9/17/2019 6:00:00 PM</span>
+                                        &nbsp;
+                                        <span id="Label5" style="display: none;">[ Kuliah IDy : 2543 ]</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="auto-style1"><span style="font-weight:bold"></span></td>
+                                    <td></td>
+                                    <td>
+                                        <button id="ButtonMinus" onclick="return TestMinus();" type="button">
+                                            (-)
+                                        </button>
+                                        <span id="Label10x">500</span>
+                                        <button id="ButtonPlus" onclick="return TestPlus();" type="button">
+                                            (+)
+                                        </button>
+                                    </td>
+                                </tr>
+                                
+                                        </tbody></table>
+                   
+            </td>
+        </tr>
+    </tbody></table>
+        <span id="Label9"></span>
+   <div class="container">
+   <div style="margin-top: 29px; margin-left: auto; margin-right: auto; margin-bottom: 0px;" class="auto-style4">
+                   <img id="Image1" style="width:500px" src="data:image/png;base64,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">
+   </div>
+   </div>
+   <span id="Timer1" style="visibility:hidden;display:none;"></span> 
+   <div id="UpdatePanel1">
+            <span id="Label1"></span>
+        </div>
+
+
+     <script>
+         function TestPlus() {
+           //  alert('ok' + document.getElementById('Label10x').innerHTML);
+             var mval = parseInt(document.getElementById('Label10x').innerHTML);
+             var tot = mval + 10;
+                var yourImg = document.getElementById('Image1');
+                if(yourImg && yourImg.style) {
+                    yourImg.style.height = tot.toString() + 'px';
+                    yourImg.style.width =  tot.toString() + 'px';
+                }
+             document.getElementById('Label10x').innerHTML = tot.toString();
+     //  alert('ok222');
+         }
+         function TestMinus() {
+           //  alert('ok' + document.getElementById('Label10x').innerHTML);
+             var mval = parseInt(document.getElementById('Label10x').innerHTML);
+             var tot = mval - 10;
+                var yourImg = document.getElementById('Image1');
+                if(yourImg && yourImg.style) {
+                    yourImg.style.height = tot.toString() + 'px';
+                    yourImg.style.width =  tot.toString() + 'px';
+                }
+             document.getElementById('Label10x').innerHTML = tot.toString();
+     //  alert('ok222');
+         }
+
+
+
+        // Add two numbers
+         function AddTwoNumbers(mm) {
+        //     var firstNumber = mm; //document.getElementById('txtTotal');
+            PageMethods.AddTwoNumbers( mm, onSucceed, onError);
+        }
+
+        // On Success
+         function onSucceed(results, currentContext, methodName) {
+             if (results[5] == "x") {
+                // alert("oooo");
+                 window.parent.location.href = 'Default.aspx';
+             }
+             if (results[0] == "ok") {
+                     document.getElementById('Label3').innerHTML = results[1];
+                     document.getElementById('Label4').innerHTML = results[2];
+                     document.getElementById('Label5').innerHTML = results[3];
+                     document.getElementById("Image1").setAttribute('src', results[4]);
+             } else if (results[0] == "0") {
+                     document.getElementById('Label3').innerHTML = results[1];
+                 document.getElementById('Label4').innerHTML = results[2];
+                 document.getElementById('Label5').innerHTML = results[3];
+                 document.getElementById("Image1").setAttribute('src', "");
+             
+             } else {
+                 //exit
+                 window.parent.location.href = 'Default.aspx';
+             }
+           //alert(results[1]); 
+        }
+
+        // On Error
+         function onError(results, currentContext, methodName) {
+             alert(results);
+            console.log(results);
+         }
+    function startTime2() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+                 var kk =  Math.floor(Math.random() * 1000); 
+                 var mm = kk + "" + s + "" + m + "" + h;
+                 AddTwoNumbers(mm);
+}
+
+
+         function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+  //  document.getElementById('txt').innerHTML =    h + ":" + m + ":" + s;
+             var t = setTimeout(startTime, 500);
+             if ((s == "20") || (s == "40") || (s == "10")){
+                 var kk =  Math.floor(Math.random() * 1000); 
+                 var mm = kk + "" + s + "" + m + "" + h;
+               //  document.getElementById('txt').innerHTML = mm;
+                 AddTwoNumbers(mm);
+             }
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+
+      function AddTwoNumbersx() {
+          //var firstNumber = "D031810326"; //document.getElementById('MatrikID').value;
+           var firstNumber = document.getElementById('MatrikID');
+            PageMethods.AddTwoNumbersx( firstNumber.value, onSucceedx, onErrorx);
+        }
+
+        // On Success
+         function onSucceedx(results, currentContext, methodName) {
+             var firstNumber = document.getElementById('MatrikID');
+             if (results[0] == "0") {
+                 document.getElementById('Label6').innerHTML = 'Tiada rekod pelajar Matrik No ' + firstNumber.value;
+                 document.getElementById('Button4y').style.visibility = 'hidden';
+                 document.getElementById("Label6").style.color = "Red";
+                 document.getElementById("Button4x0").focus();
+             } else {
+                 document.getElementById('Label6').innerHTML = results[1];
+                   document.getElementById('Button4y').style.visibility = 'visible';
+                 document.getElementById('TextBox4').value = results[0];
+                 document.getElementById("Label6").style.color = "Black";
+                 document.getElementById("Button4y").focus();
+                
+
+             }
+        }
+
+        // On Error
+         function onErrorx(results, currentContext, methodName) {
+             alert(results);
+           
+         }
+       function SimpanPen() {
+             var ddl = $("select[name$=cmbTripName]");
+           //   alert($('#datetimepicker1').data("DateTimePicker").date());
+          //   alert($('#datetimepicker2').data("DateTimePicker").date());
+         //  alert(firstNumber.length);
+
+           if ($('#datetimepicker1').data("DateTimePicker").date()) { } else {
+               alert('Sila masukan tarikh dan masa mula');
+               return false;
+
+           }
+           if ($('#datetimepicker2').data("DateTimePicker").date()) { } else {
+               alert('Sila masukan tarikh dan masa tamat');
+               return false;
+
+           }
+          //    alert($("select[name$=cmbTripName] option:selected").val());
+            //  alert( $("select[name$=cmbTripName] option:selected").text());
+           var firstNumber = $('#datetimepicker1').data("DateTimePicker").date().toISOString();
+           var firstNumber2 = $('#datetimepicker2').data("DateTimePicker").date().toISOString();
+           var kodcombo = $("select[name$=cmbTripName] option:selected").val();
+            var Kategori = $("select[name$=Kategori] option:selected").val();
+
+         //  var mindex = $('select#cmbTripName').prop('selectedIndex', optionIndex);
+
+         
+           if ($("select[name$=cmbTripName] option:selected").val() == -1) {
+               alert('Sila pilih matapelajaran');
+           } else {
+               PageMethods.SimpanPen(firstNumber, firstNumber2, kodcombo, Kategori, onSucceedx1xx, onErrorx1xx);
+           }
+          // }
+
+         }
+
+         function onSucceedx1xx(results, currentContext, methodName) {
+             alert(results[0]);
+             reloadkuliahpensyarah();
+             ClearPen();
+
+        }
+
+        // On Error
+         function onErrorx1xx(results, currentContext, methodName) {
+             alert(results);
+           
+         }
+
+
+
+
+         function HapusPen(kodsubject) {
+
+             //  var mindex = $('select#cmbTripName').prop('selectedIndex', optionIndex);
+             //    alert(kodsubject);
+             if (confirm('Anda pasti hapus data untuk Kuliah ID=' + kodsubject)) {
+
+                 PageMethods.HapusPen(kodsubject, onSucceedx1xxh, onErrorx1xxh);
+
+
+
+                 function onSucceedx1xxh(results, currentContext, methodName) {
+                     alert(results[0]);
+                     reloadkuliahpensyarah();
+
+                 }
+
+                 // On Error
+                 function onErrorx1xxh(results, currentContext, methodName) {
+                     alert(results);
+
+                 }
+             }
+         }
+
+
+
+
+
+
+
+         function Simpan() {
+            
+          //var firstNumber = "D031810326"; //document.getElementById('MatrikID').value;
+      
+         var firstNumber = document.getElementById('TextBox4');
+       //  alert(firstNumber.value);
+          PageMethods.Simpan( firstNumber.value, onSucceedx1, onErrorx1);
+
+         }
+
+
+
+
+
+        // On Success
+         function onSucceedx1(results, currentContext, methodName) {
+            
+             if (results[0] == 'exist') {
+                 document.getElementById('Button4y').style.visibility = 'hidden';
+               //  alert('Pelajar Matrik no ' + results[1] + ' sudah mendaftar kuliah');
+                 document.getElementById('Label6').innerHTML = 'Pelajar Matrik no ' + results[1] + ' sudah mendaftar kuliah';
+                 document.getElementById("Label6").style.color = "Red";
+             } else if (results[0] == "ok") {
+                 document.getElementById('Button4y').style.visibility = 'hidden';
+               //  alert('Berjaya daftar kuliah untuk pelajar Matrik no ' + results[1]);
+                 document.getElementById('Label6').innerHTML = 'Berjaya daftar kuliah untuk pelajar Matrik no ' + results[1];
+                 document.getElementById("Label6").style.color = "Green";
+                 
+             } else if (results[0] == "classnotexist") {
+                 document.getElementById('Button4y').style.visibility = 'hidden';
+                 document.getElementById('Label6').innerHTML = 'Ralat. Kuliah tidak wujud. ';
+                 document.getElementById("Label6").style.color = "Red";
+               //  alert('Ralat. Kuliah tidak wujud.');
+
+             } else {
+                 document.getElementById('Button4y').style.visibility = 'hidden';
+                // alert('Ralat. Sistem tidak berjaya membuat pendaftaran');
+                 document.getElementById('Label6').innerHTML = 'Ralat. Sistem tidak berjaya membuat pendaftaran';
+                 document.getElementById("Label6").style.color = "Red";
+             }
+             // document.getElementById('TextBox1').innerHTML = results[1]; 
+            
+             
+        }
+
+        // On Error
+         function onErrorx1(results, currentContext, methodName) {
+             alert(results);
+           
+         }
+         function TodayDate() {
+               $('#datetimepicker1').data("DateTimePicker").date(new Date());
+         }
+         function Clear() {
+           //  alert('oo' + document.getElementById('Label7').innerHTML);
+            // $("#Label6").html('');
+            // $("#MatrikID").html('');
+             document.getElementById('Label6').innerHTML = '-';
+             document.getElementById('MatrikID').value = '';
+             document.getElementById('Button4y').style.visibility = 'hidden';
+         }
+
+         function myclick(bil) {
+            // alert('okk ' + bil);
+             HapusPen(bil);
+         }
+
+
+         function reloadkuliahpensyarah()
+         {
+                   var yourPostJsonObject = {
+            
+   "tot_rec": "0",
+   "transaction_status": "3",
+   "transaction_id": "b7c8cfa9-b706-4a9d-b70d-8d70149145bd",
+   "status_message": "Veritrans payment notification",
+   "status_code": "200",
+   "signature_key": "b22b5740bf2c587ba949ae5343757a66e5a75c45b9377b9ee891909bbd8977bb2caea8e0549bf09b5040b22f54efc76aa8beb31e321f9d600f267b23f37b30ae",
+   "payment_type": "credit_card",
+   "order_id": "LUHUMMLWOT",
+   "masked_card": "401111-1112",
+   "gross_amount": "326000.00",
+   "fraud_status": "accept",
+   "bank": "mandiri",
+   "approval_code": "1505702878234"
+        }
+ 
+    
+     //   function test() {  <td>' + emp.Position + '</td>
+            // alert('okk' + document.getElementById('TotcustId').value);
+            $.ajax({
+                url: 'EmployeeService.asmx/GetAllEmployb',
+                dataType: "json",
+                method: 'post',
+                cache: false,
+                data: { jsonReceiverInCsharpObjecName: JSON.stringify(yourPostJsonObject) },
+                success: function (data) {
+                    var employeeTable = $('#tblEmployee tbody');
+                    employeeTable.empty();
+                    $(data).each(function (index, emp) {
+
+                        if (emp.Position == "LastRec") {
+                            document.getElementById('TotcustId').value = emp.Name;
+                        } else {
+                            employeeTable.append('<tr><td>' + emp.ID + '</td><td>' + emp.BIL + '</td><td>'
+                                + emp.Name + '</td><td>' + emp.Office
+                                + '</td><td>' + emp.Age + '</td><td>' + emp.Salary + '</td><td>' + emp.Kategori + '</td></tr>');
+                        }
+                    });
+                },
+                error: function (err) {
+                    alert('err1 ' + err);
+                }
+            });
+      //  }
+           // e.preventDefault();
+            return false;
+   
+
+         }
+
+
+
+         function ClearPen() {
+           //  alert('ok');
+          //   $("select[name$=cmbTripName] option:selected").val() = -1;
+           //  $("select[name$=cmbTripName] option:select").val(-1);
+          //   $("select[name$=cmbTripName]").Items.FindByValue(-1).Selected = true;
+           //  elementRef.options[i].selected = true;
+              document.getElementById('JamKuliah').value="";
+              document.getElementById('cmbTripName').options[0].selected = true;
+           //  $('#datetimepicker1').data("DateTimePicker").date(new Date());
+             $('#datetimepicker2').data("DateTimePicker").clear();
+             $('#datetimepicker1').data("DateTimePicker").clear();
+           //  $('select[name$=cmbTripName]  option[value=-1]').attr('selected','selected');
+         }
+            function ClearMessage2()
+            {
+                if (event.keyCode == 13) {
+                    //alert('ooooo');
+                    AddTwoNumbersx();
+                   // document.getElementById("Button4x0").focus();
+                    return false;
+                } else {
+                    
+                    return true;
+                }
+            
+            
+         }
+         function ClearMessage()
+         {
+            //  alert('ooooo');
+             Clear();
+            // document.getElementById('Label6').innerHTML = "-";
+             //document.getElementById("Label6").style.color = "Black";
+         }
+         function SimpanPen2() {
+       
+             if (document.getElementById('JamKuliah').value == '') {
+              } else {
+                 if ($('#datetimepicker1').data("DateTimePicker").date()) { } else {
+                
+                     alert('Sila masukan tarikh dan masa mula');
+                     return false;
+
+                 }
+                 var firstNumber = $('#datetimepicker1').data("DateTimePicker").date().toISOString();
+                 var mytot = document.getElementById('JamKuliah').value;
+                 PageMethods.SimpanPen2(firstNumber, "", mytot, onSucceedx1xx2, onErrorx1xx2);
+             }
+         }
+
+         function onSucceedx1xx2(results, currentContext, methodName) {
+                    $('#datetimepicker2').data("DateTimePicker").date(results[1]);
+             document.getElementById('JamKuliah').value=results[2];
+         }
+
+        // On Error
+         function onErrorx1xx2(results, currentContext, methodName) {
+             alert(results[0]);
+         }
+
+         function ValidateNumberOnly()
+         {
+            // alert(event.keyCode);
+
+             if ((event.keyCode < 48 || event.keyCode > 57)) {
+                // if (event.keyCode == 46) {
+
+                 //} else {
+                     event.returnValue = false;
+                // }
+             }
+        }
+
+
+    </script>
+
+
+                <p>
+                    
+                    
+                    
+                    <textbox id="TextBox4" visible="false" width="0px"></textbox>
+                </p>
+
+
+
+
+
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Sys.UI._Timer, {"enabled":true,"interval":1000,"uniqueID":"Timer1"}, null, null, $get("Timer1"));
+});
+//]]>
+</script>
+
+    
+
+</td></tr></tbody></table><span style="display: none !important;"><input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value=""></span><span style="display: none !important;"><input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value=""></span><span style="display: none !important;"><input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="bG+khYmpQHfP9g7J1DgYrs3534K3FWPAVEPjvp7lzoMbPsyQ5UX0OrFmycR5cv4SgRJiS7bh/CJwF5Q45/kRetTC5YY9fvfS00ebMDsYmgi9JHe19FDrQ8YNbuaIeaBpL6jNwSjpidxLm+aUi/j8aY8qKfDibGMCadVAGv9lsU7HlGikqvewkKrSG8kG3Tcploh0MiYzT4iCZlXzDVboGkaCRF3bXCowk5kAhxxsDJvwBsEEE3K6xlAVOVoOL0cqbvU/j1NAljWDvaSTjQW1vBJJQtPzUfcN+Ls3F4gHqCkUGujpj1i8NBsZvjzYeFgem4OWCj2tPwD0H/3Vdf6gsAglYf9ordXWZV6GPy3YlnhgBKOC9ZGGLFRPWvkbQePGzzf081nPMFNKf+AlHajpCaYaYjqtwktDD5lq4gwwzkE+n/gbo3I4FZrH6lmmbDayXN8uWaCnLWwfWzvqBy4ICL2/KODhtViadBEN9mmDuFbIMct6GHL4EpGk9P0f7ibiLqfn3nZERDGhd32VxFbaeD6Ixqyh/PXLOdq77dtbfDoKiKCePA27R2d0BQFT+XeFhzg42psxFlwhq6ATecsRnlvVSyyEU+mMDSzoKtp7k7UXHFKDkUVzqBMZIsIv7VvoksrpPbA/3MBOoWyJKeZcpz8JXDKznsIm1/WT4C2RpFxFmQoLDCMyxTbscwwwuwMfFREPQNGhngNQ6eBF0mx51D2If1H9uNUu8pJSFj41nGO0oaUUZGLJw4vqxQGJnAsXnQgd9SibU72nchVuL5mQRxK/JcSsucxtDxvOaA2Cq/FSdqWJpzFMmVB/aiAee9nPKs7257WiXk88Sj/q1rsljVUg7wpXqhA1kmLuWdDv5hyL+R3ucwRZYuLWtoE6vTogJZUI9GEKBFqdD7pz7BtCzB4gICPTTvOepEh9omOHDT4AAfpKn1D7gl1RXaoVN75nSVWdMz6iA6ro5gXgCDE+Rp/BJnddfMc6J5yJC3yx2RrIKsUDZnKH3sSDyzoOEzpOGSOY+jrNpGX8nEdqzAPRFy4FZ+Gpq5PUrp3rv3+CHf2PBkHwmuOm0/J6T805+mazHabmhG9X7nWEfiwweMCG34WKX0KC7kyR8DejS86piSfrLW09OtxtkwJYfzLFT/jkjBHW3b19m/8Rs3OIi34pw7cXMtL4aiR2RnBAKAenwfNuka/l0VHiuafhltWu78EtTa/QMiQyw2CHLR7EbIp0IovNnKGNxy0r4OYI4CKWdAvqLNE5RLYYk0h/AjtSFbnJ6wbxYQEG3PvVAsv8QANgyCL0TLv8JwiqrVKo5N5O9JH1vRZuIeeO7xV3eMIoB7MAvUgzaNfVLvPXgI36WdUbyBl3DLKD6ECulFNX8LGksEAi4XKhqKNiOJm10YQXlMnhSpO4M2M3BHtnTbaaH0pTsNV0oedaSjswVvuiMhaDFDSbtDbc1jgFzfHWaJ9cgvVvAM6leqRsWrp1PYKxqdQPfS230oyz0j3xf2gzr7uzwDU="></span><span style="display: none !important;"><input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="333BDFA8"></span><span style="display: none !important;"><input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="R3v5rPVgCa7bk62SaQmK63iS6CTn0599ntSk1iqliRe2IG1O7Ar9bHLwjeLb1iKUpeo7zJE0YiJ8W4GeklIE5xLu0FAoPbekrMZbkdkLWpSbucml/02coeorFY+Q4LqVic9SwEa7p7gT6k8iGsymoajkdIGFMaUegys/mC76MrYj7IedHgYlNFRI8VqulxwBEeUqaxaJdw2+c2Z6/xDtrg=="></span></form></body></html>
