@@ -1,32 +1,39 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!-- saved from url=(0040)https://kuliah.utem.edu.my/Employee.aspx -->
-<html><script src="chrome-extension://ljdobmomdgdljniojadhoplhkpialdid/page/prompt.js"></script><script src="chrome-extension://ljdobmomdgdljniojadhoplhkpialdid/page/runScript.js"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
-	Employee
-</title><link rel="stylesheet" href="./bootstrap.min.css">
+<html>
+<script src="chrome-extension://ljdobmomdgdljniojadhoplhkpialdid/page/prompt.js"></script>
+<script src="chrome-extension://ljdobmomdgdljniojadhoplhkpialdid/page/runScript.js"></script>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>
+        Employee
+    </title>
+    <link rel="stylesheet" href="./bootstrap.min.css">
     <script src="./jquery.min.js.download"></script>
     <script src="./bootstrap.min.js.download"></script>
     <script type="text/javascript">
-    //   alert('ddd' + document.getElementById('#TotcustId').innerHTML);
-      //  document.getElementById('TotcustId').value = "3";
+        //   alert('ddd' + document.getElementById('#TotcustId').innerHTML);
+        //  document.getElementById('TotcustId').value = "3";
         var yourPostJsonObject = {
-            
-   "tot_rec": "0",
-   "transaction_status": "3",
-   "transaction_id": "b7c8cfa9-b706-4a9d-b70d-8d70149145bd",
-   "status_message": "Veritrans payment notification",
-   "status_code": "200",
-   "signature_key": "b22b5740bf2c587ba949ae5343757a66e5a75c45b9377b9ee891909bbd8977bb2caea8e0549bf09b5040b22f54efc76aa8beb31e321f9d600f267b23f37b30ae",
-   "payment_type": "credit_card",
-   "order_id": "LUHUMMLWOT",
-   "masked_card": "401111-1112",
-   "gross_amount": "326000.00",
-   "fraud_status": "accept",
-   "bank": "mandiri",
-   "approval_code": "1505702878234"
+
+            "tot_rec": "0",
+            "transaction_status": "3",
+            "transaction_id": "b7c8cfa9-b706-4a9d-b70d-8d70149145bd",
+            "status_message": "Veritrans payment notification",
+            "status_code": "200",
+            "signature_key": "b22b5740bf2c587ba949ae5343757a66e5a75c45b9377b9ee891909bbd8977bb2caea8e0549bf09b5040b22f54efc76aa8beb31e321f9d600f267b23f37b30ae",
+            "payment_type": "credit_card",
+            "order_id": "LUHUMMLWOT",
+            "masked_card": "401111-1112",
+            "gross_amount": "326000.00",
+            "fraud_status": "accept",
+            "bank": "mandiri",
+            "approval_code": "1505702878234"
         }
- 
+
         $(document).ready(function (e) {
-     //   function test() {
+            //   function test() {
             // alert('okk' + document.getElementById('TotcustId').value);
             $.ajax({
                 url: 'EmployeeService.asmx/GetAllEmployee',
@@ -46,107 +53,113 @@
                                 + emp.Name + '</td><td>' + emp.Position + '</td><td>' + emp.Office
                                 + '</td><td>' + emp.Age + '</td></tr>');
                         }
-                         document.getElementById('Label1x').innerHTML = "Jumlah Pelajar Hadir : " + emp.BIL;
+                        document.getElementById('Label1x').innerHTML = "Jumlah Pelajar Hadir : " + emp.BIL;
                     });
                 },
                 error: function (err) {
                     alert('err1 ' + err);
                 }
             });
-      //  }
-           // e.preventDefault();
+            //  }
+            // e.preventDefault();
             return false;
         });
     </script>
-  
-     
+
+
 </head>
+
 <body>
     <form method="post" action="https://kuliah.utem.edu.my/Employee.aspx" id="form1">
-<div class="aspNetHidden">
-<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
-<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="f2CmlSnaIB0P4OT0upRzIBkv5ic9/dD17T37qYLrJU50bAINc1YC9aTHKVOLfOskPjHO/ltp1ZgcbTKAeyq3gpwc9J5EVV2+lms7jzdNzsGsigwGDNZdN64b7pwYSlyRqigaUC4SutwnFInJxfIxKoWGkzPcHXH6e0uzfhJMLoxontD2aaXqJUZZggwfCVG7ZbtXaXic7O3IQX93DjPZopxU54ZfOrw5AAoS6yO5moU8yAgwBN78gUvh//V40M9L97YKqKwGJxJV/slG+mxy3AXrNNtE/K570XHOdfnjoNo=">
-</div>
+        <div class="aspNetHidden">
+            <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+            <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
+                   value="f2CmlSnaIB0P4OT0upRzIBkv5ic9/dD17T37qYLrJU50bAINc1YC9aTHKVOLfOskPjHO/ltp1ZgcbTKAeyq3gpwc9J5EVV2+lms7jzdNzsGsigwGDNZdN64b7pwYSlyRqigaUC4SutwnFInJxfIxKoWGkzPcHXH6e0uzfhJMLoxontD2aaXqJUZZggwfCVG7ZbtXaXic7O3IQX93DjPZopxU54ZfOrw5AAoS6yO5moU8yAgwBN78gUvh//V40M9L97YKqKwGJxJV/slG+mxy3AXrNNtE/K570XHOdfnjoNo=">
+        </div>
 
-<script type="text/javascript">
-//<![CDATA[
-var theForm = document.forms['form1'];
-if (!theForm) {
-    theForm = document.form1;
-}
-function __doPostBack(eventTarget, eventArgument) {
-    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
-        theForm.__EVENTTARGET.value = eventTarget;
-        theForm.__EVENTARGUMENT.value = eventArgument;
-        theForm.submit();
-    }
-}
-//]]>
-</script>
-
-
-<script src="./WebResource.axd" type="text/javascript"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            var theForm = document.forms['form1'];
+            if (!theForm) {
+                theForm = document.form1;
+            }
+            function __doPostBack(eventTarget, eventArgument) {
+                if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+                    theForm.__EVENTTARGET.value = eventTarget;
+                    theForm.__EVENTARGUMENT.value = eventArgument;
+                    theForm.submit();
+                }
+            }
+            //]]>
+        </script>
 
 
-<script src="./ScriptResource.axd" type="text/javascript"></script>
-<script src="./ScriptResource(1).axd" type="text/javascript"></script>
-<script src="./ScriptResource(2).axd" type="text/javascript"></script>
-<script type="text/javascript">
-//<![CDATA[
-var PageMethods = function() {
-PageMethods.initializeBase(this);
-this._timeout = 0;
-this._userContext = null;
-this._succeeded = null;
-this._failed = null;
-}
-PageMethods.prototype = {
-_get_path:function() {
- var p = this.get_path();
- if (p) return p;
- else return PageMethods._staticInstance.get_path();},
-AddTwoNumbersx:function(firstNumber,succeededCallback, failedCallback, userContext) {
-return this._invoke(this._get_path(), 'AddTwoNumbersx',false,{firstNumber:firstNumber},succeededCallback,failedCallback,userContext); }}
-PageMethods.registerClass('PageMethods',Sys.Net.WebServiceProxy);
-PageMethods._staticInstance = new PageMethods();
-PageMethods.set_path = function(value) { PageMethods._staticInstance.set_path(value); }
-PageMethods.get_path = function() { return PageMethods._staticInstance.get_path(); }
-PageMethods.set_timeout = function(value) { PageMethods._staticInstance.set_timeout(value); }
-PageMethods.get_timeout = function() { return PageMethods._staticInstance.get_timeout(); }
-PageMethods.set_defaultUserContext = function(value) { PageMethods._staticInstance.set_defaultUserContext(value); }
-PageMethods.get_defaultUserContext = function() { return PageMethods._staticInstance.get_defaultUserContext(); }
-PageMethods.set_defaultSucceededCallback = function(value) { PageMethods._staticInstance.set_defaultSucceededCallback(value); }
-PageMethods.get_defaultSucceededCallback = function() { return PageMethods._staticInstance.get_defaultSucceededCallback(); }
-PageMethods.set_defaultFailedCallback = function(value) { PageMethods._staticInstance.set_defaultFailedCallback(value); }
-PageMethods.get_defaultFailedCallback = function() { return PageMethods._staticInstance.get_defaultFailedCallback(); }
-PageMethods.set_enableJsonp = function(value) { PageMethods._staticInstance.set_enableJsonp(value); }
-PageMethods.get_enableJsonp = function() { return PageMethods._staticInstance.get_enableJsonp(); }
-PageMethods.set_jsonpCallbackParameter = function(value) { PageMethods._staticInstance.set_jsonpCallbackParameter(value); }
-PageMethods.get_jsonpCallbackParameter = function() { return PageMethods._staticInstance.get_jsonpCallbackParameter(); }
-PageMethods.set_path("Employee.aspx");
-PageMethods.AddTwoNumbersx= function(firstNumber,onSuccess,onFailed,userContext) {PageMethods._staticInstance.AddTwoNumbersx(firstNumber,onSuccess,onFailed,userContext); }
-//]]>
-</script>
+        <script src="./WebResource.axd" type="text/javascript"></script>
 
-<div class="aspNetHidden">
 
-	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="8AAAAE67">
-</div>
-       <br>
-                <script type="text/javascript">
-//<![CDATA[
-Sys.WebForms.PageRequestManager._initialize('ScriptManager2', 'form1', [], [], [], 90, '');
-//]]>
-</script>
+        <script src="./ScriptResource.axd" type="text/javascript"></script>
+        <script src="./ScriptResource(1).axd" type="text/javascript"></script>
+        <script src="./ScriptResource(2).axd" type="text/javascript"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            var PageMethods = function () {
+                PageMethods.initializeBase(this);
+                this._timeout = 0;
+                this._userContext = null;
+                this._succeeded = null;
+                this._failed = null;
+            }
+            PageMethods.prototype = {
+                _get_path: function () {
+                    var p = this.get_path();
+                    if (p) return p;
+                    else return PageMethods._staticInstance.get_path();
+                },
+                AddTwoNumbersx: function (firstNumber, succeededCallback, failedCallback, userContext) {
+                    return this._invoke(this._get_path(), 'AddTwoNumbersx', false, { firstNumber: firstNumber }, succeededCallback, failedCallback, userContext);
+                }
+            }
+            PageMethods.registerClass('PageMethods', Sys.Net.WebServiceProxy);
+            PageMethods._staticInstance = new PageMethods();
+            PageMethods.set_path = function (value) { PageMethods._staticInstance.set_path(value); }
+            PageMethods.get_path = function () { return PageMethods._staticInstance.get_path(); }
+            PageMethods.set_timeout = function (value) { PageMethods._staticInstance.set_timeout(value); }
+            PageMethods.get_timeout = function () { return PageMethods._staticInstance.get_timeout(); }
+            PageMethods.set_defaultUserContext = function (value) { PageMethods._staticInstance.set_defaultUserContext(value); }
+            PageMethods.get_defaultUserContext = function () { return PageMethods._staticInstance.get_defaultUserContext(); }
+            PageMethods.set_defaultSucceededCallback = function (value) { PageMethods._staticInstance.set_defaultSucceededCallback(value); }
+            PageMethods.get_defaultSucceededCallback = function () { return PageMethods._staticInstance.get_defaultSucceededCallback(); }
+            PageMethods.set_defaultFailedCallback = function (value) { PageMethods._staticInstance.set_defaultFailedCallback(value); }
+            PageMethods.get_defaultFailedCallback = function () { return PageMethods._staticInstance.get_defaultFailedCallback(); }
+            PageMethods.set_enableJsonp = function (value) { PageMethods._staticInstance.set_enableJsonp(value); }
+            PageMethods.get_enableJsonp = function () { return PageMethods._staticInstance.get_enableJsonp(); }
+            PageMethods.set_jsonpCallbackParameter = function (value) { PageMethods._staticInstance.set_jsonpCallbackParameter(value); }
+            PageMethods.get_jsonpCallbackParameter = function () { return PageMethods._staticInstance.get_jsonpCallbackParameter(); }
+            PageMethods.set_path("Employee.aspx");
+            PageMethods.AddTwoNumbersx = function (firstNumber, onSuccess, onFailed, userContext) { PageMethods._staticInstance.AddTwoNumbersx(firstNumber, onSuccess, onFailed, userContext); }
+            //]]>
+        </script>
+
+        <div class="aspNetHidden">
+
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="8AAAAE67">
+        </div>
+        <br>
+        <script type="text/javascript">
+            //<![CDATA[
+            Sys.WebForms.PageRequestManager._initialize('ScriptManager2', 'form1', [], [], [], 90, '');
+            //]]>
+        </script>
 
         <div class="container">
-         
+
             <h3 class="text-uppercase text-center">SENARAI PELAJAR</h3>
-               <h6 class="text-uppercase text-center">
-            <label id="Label1x" name="Label1x">Jumlah Pelajar Hadir : 43</label><br>
-            <span id="Label3">Kuliah ID : 2537 [BITP3113--PENGATURCARAAN BERORIENTASIKAN OBJEK]</span><br>
-          <span id="masakelas">Masa : 9/17/2019 2:00:00 PM - 9/17/2019 6:00:00 PM</span></h6>
+            <h6 class="text-uppercase text-center">
+                <label id="Label1x" name="Label1x">Jumlah Pelajar Hadir : 43</label><br>
+                <span id="Label3">Kuliah ID : 2537 [BITP3113--PENGATURCARAAN BERORIENTASIKAN OBJEK]</span><br>
+                <span id="masakelas">Masa : 9/17/2019 2:00:00 PM - 9/17/2019 6:00:00 PM</span>
+            </h6>
             <table id="tblEmployee" class="table table-bordered">
                 <thead class="bg-primary text-white">
                     <tr>
@@ -156,85 +169,432 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager2', 'form1', [], [], [
                         <th>ID Pelajar</th>
                         <th>Masa</th>
                         <th>Jenis</th>
-                     
+
                     </tr>
                 </thead>
-                <tbody><tr><td></td><td>1</td><td>NURUL AFIQAH BINTI ABD. RAZAK                                                                       </td><td>B031910220</td><td>9/17/2019 5:50:08 PM</td><td>MN</td></tr><tr><td></td><td>2</td><td>NICHOLAS LALUNG MUTANG                                                                              </td><td>B031910171</td><td>9/17/2019 5:49:46 PM</td><td>MN</td></tr><tr><td></td><td>3</td><td>MUHAMMAD FARIZ BIN RAMLI                                                                            </td><td>B031910218</td><td>9/17/2019 5:49:30 PM</td><td>MN</td></tr><tr><td></td><td>4</td><td>NURAIN BINTI MADZLEN                                                                                </td><td>B031910419</td><td>9/17/2019 5:49:06 PM</td><td>MN</td></tr><tr><td></td><td>5</td><td>ABDUL QAYYUM BIN ABDUL KHALIDDIN                                                                    </td><td>B031910196</td><td>9/17/2019 5:48:46 PM</td><td>MN</td></tr><tr><td></td><td>6</td><td>GION MIN MING                                                                                       </td><td>B031810222</td><td>9/17/2019 5:44:58 PM</td><td>MN</td></tr><tr><td></td><td>7</td><td>LIEW KOK FOO                                                                                        </td><td>B031810197</td><td>9/17/2019 5:44:41 PM</td><td>MN</td></tr><tr><td></td><td>8</td><td>RAMANAN GOBALAKRISHNAN                                                                              </td><td>B031810334</td><td>9/17/2019 5:44:30 PM</td><td>MN</td></tr><tr><td></td><td>9</td><td>YONG YEONG                                                                                          </td><td>B031810236</td><td>9/17/2019 5:44:15 PM</td><td>MN</td></tr><tr><td></td><td>10</td><td>LIM ZI FENG                                                                                         </td><td>B031810204</td><td>9/17/2019 5:44:14 PM</td><td>QR</td></tr><tr><td></td><td>11</td><td>MUHAMMAD NAIM SYAHMI BIN ROSLAN                                                                     </td><td>B031810312</td><td>9/17/2019 5:44:01 PM</td><td>MN</td></tr><tr><td></td><td>12</td><td>MUHAMMAD HARRAZ BIN HARUN                                                                           </td><td>B031810426</td><td>9/17/2019 5:43:48 PM</td><td>MN</td></tr><tr><td></td><td>13</td><td>ARIFF RAHIMIN BIN MOHAMED NORAZMAN                                                                  </td><td>B031810258</td><td>9/17/2019 5:43:33 PM</td><td>MN</td></tr><tr><td></td><td>14</td><td>MUHAMMAD AZRI BIN AZMI                                                                              </td><td>B031810248</td><td>9/17/2019 5:43:21 PM</td><td>MN</td></tr><tr><td></td><td>15</td><td>TAN YI WEN                                                                                          </td><td>B031810283</td><td>9/17/2019 5:43:13 PM</td><td>QR</td></tr><tr><td></td><td>16</td><td>NOOR SYAZANA ATIQAH BINTI ABD RASHID                                                                </td><td>B031710320</td><td>9/17/2019 5:43:12 PM</td><td>QR</td></tr><tr><td></td><td>17</td><td>MUHAMMAD SYAFIQ BIN ARMAN                                                                           </td><td>B031910191</td><td>9/17/2019 5:43:09 PM</td><td>QR</td></tr><tr><td></td><td>18</td><td>KWONG TUNG NAN                                                                                      </td><td>B031810219</td><td>9/17/2019 5:43:04 PM</td><td>QR</td></tr><tr><td></td><td>19</td><td>ELLE ALIZ BINTI AMINUDDIN                                                                           </td><td>B031810295</td><td>9/17/2019 5:42:36 PM</td><td>QR</td></tr><tr><td></td><td>20</td><td>THITTHIMA A/P WAT                                                                                   </td><td>B031810361</td><td>9/17/2019 5:42:25 PM</td><td>QR</td></tr><tr><td></td><td>21</td><td>MUHAMED HUSSAIN BIN HITHAYATULLAH                                                                   </td><td>B031810392</td><td>9/17/2019 5:42:23 PM</td><td>MN</td></tr><tr><td></td><td>22</td><td>MUHAMMAD FIKRUN AMIN                                                                                </td><td>B031810404</td><td>9/17/2019 5:42:21 PM</td><td>QR</td></tr><tr><td></td><td>23</td><td>MUHAMMAD HAZIQ IZZUDDIN BIN MOHAMMAD JUNAIDY                                                        </td><td>B031810323</td><td>9/17/2019 5:42:15 PM</td><td>QR</td></tr><tr><td></td><td>24</td><td>AAINAA NABILAH BINTI ROHAIZAD                                                                       </td><td>B031810373</td><td>9/17/2019 5:42:12 PM</td><td>QR</td></tr><tr><td></td><td>25</td><td>NUR ALIS SOPHIA BINTI SUHAIMI                                                                       </td><td>B031810299</td><td>9/17/2019 5:42:00 PM</td><td>MN</td></tr><tr><td></td><td>26</td><td>TAN WEN XIANG                                                                                       </td><td>B031810179</td><td>9/17/2019 5:40:53 PM</td><td>QR</td></tr><tr><td></td><td>27</td><td>DANISH ISKANDAR BIN ZUHRI ISKANDAR                                                                  </td><td>B031710406</td><td>9/17/2019 2:55:33 PM</td><td>QR</td></tr><tr><td></td><td>28</td><td>AZRUL AFIQ BIN ABDUL AZIZ                                                                           </td><td>B031810176</td><td>9/17/2019 2:23:24 PM</td><td>QR</td></tr><tr><td></td><td>29</td><td>MUHAMMAD NAZMI BIN NORDIN                                                                           </td><td>B031810301</td><td>9/17/2019 2:23:02 PM</td><td>QR</td></tr><tr><td></td><td>30</td><td>KARAM L. M. SHAATH                                                                                  </td><td>B031810464</td><td>9/17/2019 2:22:56 PM</td><td>QR</td></tr><tr><td></td><td>31</td><td>CHON YAO JUN                                                                                        </td><td>B031810223</td><td>9/17/2019 2:22:49 PM</td><td>MN</td></tr><tr><td></td><td>32</td><td>NUR FARZANA DIYANA BINTI AZIZI                                                                      </td><td>B031810331</td><td>9/17/2019 2:22:47 PM</td><td>QR</td></tr><tr><td></td><td>33</td><td>ADLINA BINTI MOHAMAD                                                                                </td><td>B031810358</td><td>9/17/2019 2:22:42 PM</td><td>QR</td></tr><tr><td></td><td>34</td><td>SITI NUR HANNA BINTI ZAKARIA                                                                        </td><td>B031810384</td><td>9/17/2019 2:22:40 PM</td><td>QR</td></tr><tr><td></td><td>35</td><td>NUR FATIHAH BINTI YUSOFF                                                                            </td><td>B031810137</td><td>9/17/2019 2:22:22 PM</td><td>MN</td></tr><tr><td></td><td>36</td><td>SITI NOOR AZMIRA BT AHMAD                                                                           </td><td>B031810042</td><td>9/17/2019 2:22:10 PM</td><td>MN</td></tr><tr><td></td><td>37</td><td>FARAH NAJIHAH BINTI RAMZI                                                                           </td><td>B031910449</td><td>9/17/2019 2:21:57 PM</td><td>MN</td></tr><tr><td></td><td>38</td><td>NUR LIYANA BINTI ABD SHUKUR                                                                         </td><td>B031810400</td><td>9/17/2019 2:21:45 PM</td><td>MN</td></tr><tr><td></td><td>39</td><td>UMMI NAMIRAH BINTI HASHIM                                                                           </td><td>B031810027</td><td>9/17/2019 2:21:35 PM</td><td>MN</td></tr><tr><td></td><td>40</td><td>MUHAMMAD ASNAWI BIN HASHIM                                                                          </td><td>B031810267</td><td>9/17/2019 2:21:14 PM</td><td>QR</td></tr><tr><td></td><td>41</td><td>AINA ASYIQIN BINTI MOHAMAD ZAKI                                                                     </td><td>B031810289</td><td>9/17/2019 2:21:12 PM</td><td>QR</td></tr><tr><td></td><td>42</td><td>TAN ZHI ZHONG                                                                                       </td><td>B031810194</td><td>9/17/2019 2:20:56 PM</td><td>QR</td></tr><tr><td></td><td>43</td><td>SAIFUL MIRZA BIN SHUBLI                                                                             </td><td>B031810370</td><td>9/17/2019 2:20:19 PM</td><td>QR</td></tr></tbody>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>1</td>
+                        <td>NURUL AFIQAH BINTI ABD. RAZAK </td>
+                        <td>B031910220</td>
+                        <td>9/17/2019 5:50:08 PM</td>
+                        <td>MN</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2</td>
+                        <td>NICHOLAS LALUNG MUTANG </td>
+                        <td>B031910171</td>
+                        <td>9/17/2019 5:49:46 PM</td>
+                        <td>MN</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>3</td>
+                        <td>MUHAMMAD FARIZ BIN RAMLI </td>
+                        <td>B031910218</td>
+                        <td>9/17/2019 5:49:30 PM</td>
+                        <td>MN</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>4</td>
+                        <td>NURAIN BINTI MADZLEN </td>
+                        <td>B031910419</td>
+                        <td>9/17/2019 5:49:06 PM</td>
+                        <td>MN</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>5</td>
+                        <td>ABDUL QAYYUM BIN ABDUL KHALIDDIN </td>
+                        <td>B031910196</td>
+                        <td>9/17/2019 5:48:46 PM</td>
+                        <td>MN</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>6</td>
+                        <td>GION MIN MING </td>
+                        <td>B031810222</td>
+                        <td>9/17/2019 5:44:58 PM</td>
+                        <td>MN</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>7</td>
+                        <td>LIEW KOK FOO </td>
+                        <td>B031810197</td>
+                        <td>9/17/2019 5:44:41 PM</td>
+                        <td>MN</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>8</td>
+                        <td>RAMANAN GOBALAKRISHNAN </td>
+                        <td>B031810334</td>
+                        <td>9/17/2019 5:44:30 PM</td>
+                        <td>MN</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>9</td>
+                        <td>YONG YEONG </td>
+                        <td>B031810236</td>
+                        <td>9/17/2019 5:44:15 PM</td>
+                        <td>MN</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>10</td>
+                        <td>LIM ZI FENG </td>
+                        <td>B031810204</td>
+                        <td>9/17/2019 5:44:14 PM</td>
+                        <td>QR</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>11</td>
+                        <td>MUHAMMAD NAIM SYAHMI BIN ROSLAN </td>
+                        <td>B031810312</td>
+                        <td>9/17/2019 5:44:01 PM</td>
+                        <td>MN</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>12</td>
+                        <td>MUHAMMAD HARRAZ BIN HARUN </td>
+                        <td>B031810426</td>
+                        <td>9/17/2019 5:43:48 PM</td>
+                        <td>MN</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>13</td>
+                        <td>ARIFF RAHIMIN BIN MOHAMED NORAZMAN </td>
+                        <td>B031810258</td>
+                        <td>9/17/2019 5:43:33 PM</td>
+                        <td>MN</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>14</td>
+                        <td>MUHAMMAD AZRI BIN AZMI </td>
+                        <td>B031810248</td>
+                        <td>9/17/2019 5:43:21 PM</td>
+                        <td>MN</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>15</td>
+                        <td>TAN YI WEN </td>
+                        <td>B031810283</td>
+                        <td>9/17/2019 5:43:13 PM</td>
+                        <td>QR</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>16</td>
+                        <td>NOOR SYAZANA ATIQAH BINTI ABD RASHID </td>
+                        <td>B031710320</td>
+                        <td>9/17/2019 5:43:12 PM</td>
+                        <td>QR</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>17</td>
+                        <td>MUHAMMAD SYAFIQ BIN ARMAN </td>
+                        <td>B031910191</td>
+                        <td>9/17/2019 5:43:09 PM</td>
+                        <td>QR</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>18</td>
+                        <td>KWONG TUNG NAN </td>
+                        <td>B031810219</td>
+                        <td>9/17/2019 5:43:04 PM</td>
+                        <td>QR</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>19</td>
+                        <td>ELLE ALIZ BINTI AMINUDDIN </td>
+                        <td>B031810295</td>
+                        <td>9/17/2019 5:42:36 PM</td>
+                        <td>QR</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>20</td>
+                        <td>THITTHIMA A/P WAT </td>
+                        <td>B031810361</td>
+                        <td>9/17/2019 5:42:25 PM</td>
+                        <td>QR</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>21</td>
+                        <td>MUHAMED HUSSAIN BIN HITHAYATULLAH </td>
+                        <td>B031810392</td>
+                        <td>9/17/2019 5:42:23 PM</td>
+                        <td>MN</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>22</td>
+                        <td>MUHAMMAD FIKRUN AMIN </td>
+                        <td>B031810404</td>
+                        <td>9/17/2019 5:42:21 PM</td>
+                        <td>QR</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>23</td>
+                        <td>MUHAMMAD HAZIQ IZZUDDIN BIN MOHAMMAD JUNAIDY </td>
+                        <td>B031810323</td>
+                        <td>9/17/2019 5:42:15 PM</td>
+                        <td>QR</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>24</td>
+                        <td>AAINAA NABILAH BINTI ROHAIZAD </td>
+                        <td>B031810373</td>
+                        <td>9/17/2019 5:42:12 PM</td>
+                        <td>QR</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>25</td>
+                        <td>NUR ALIS SOPHIA BINTI SUHAIMI </td>
+                        <td>B031810299</td>
+                        <td>9/17/2019 5:42:00 PM</td>
+                        <td>MN</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>26</td>
+                        <td>TAN WEN XIANG </td>
+                        <td>B031810179</td>
+                        <td>9/17/2019 5:40:53 PM</td>
+                        <td>QR</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>27</td>
+                        <td>DANISH ISKANDAR BIN ZUHRI ISKANDAR </td>
+                        <td>B031710406</td>
+                        <td>9/17/2019 2:55:33 PM</td>
+                        <td>QR</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>28</td>
+                        <td>AZRUL AFIQ BIN ABDUL AZIZ </td>
+                        <td>B031810176</td>
+                        <td>9/17/2019 2:23:24 PM</td>
+                        <td>QR</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>29</td>
+                        <td>MUHAMMAD NAZMI BIN NORDIN </td>
+                        <td>B031810301</td>
+                        <td>9/17/2019 2:23:02 PM</td>
+                        <td>QR</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>30</td>
+                        <td>KARAM L. M. SHAATH </td>
+                        <td>B031810464</td>
+                        <td>9/17/2019 2:22:56 PM</td>
+                        <td>QR</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>31</td>
+                        <td>CHON YAO JUN </td>
+                        <td>B031810223</td>
+                        <td>9/17/2019 2:22:49 PM</td>
+                        <td>MN</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>32</td>
+                        <td>NUR FARZANA DIYANA BINTI AZIZI </td>
+                        <td>B031810331</td>
+                        <td>9/17/2019 2:22:47 PM</td>
+                        <td>QR</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>33</td>
+                        <td>ADLINA BINTI MOHAMAD </td>
+                        <td>B031810358</td>
+                        <td>9/17/2019 2:22:42 PM</td>
+                        <td>QR</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>34</td>
+                        <td>SITI NUR HANNA BINTI ZAKARIA </td>
+                        <td>B031810384</td>
+                        <td>9/17/2019 2:22:40 PM</td>
+                        <td>QR</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>35</td>
+                        <td>NUR FATIHAH BINTI YUSOFF </td>
+                        <td>B031810137</td>
+                        <td>9/17/2019 2:22:22 PM</td>
+                        <td>MN</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>36</td>
+                        <td>SITI NOOR AZMIRA BT AHMAD </td>
+                        <td>B031810042</td>
+                        <td>9/17/2019 2:22:10 PM</td>
+                        <td>MN</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>37</td>
+                        <td>FARAH NAJIHAH BINTI RAMZI </td>
+                        <td>B031910449</td>
+                        <td>9/17/2019 2:21:57 PM</td>
+                        <td>MN</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>38</td>
+                        <td>NUR LIYANA BINTI ABD SHUKUR </td>
+                        <td>B031810400</td>
+                        <td>9/17/2019 2:21:45 PM</td>
+                        <td>MN</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>39</td>
+                        <td>UMMI NAMIRAH BINTI HASHIM </td>
+                        <td>B031810027</td>
+                        <td>9/17/2019 2:21:35 PM</td>
+                        <td>MN</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>40</td>
+                        <td>MUHAMMAD ASNAWI BIN HASHIM </td>
+                        <td>B031810267</td>
+                        <td>9/17/2019 2:21:14 PM</td>
+                        <td>QR</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>41</td>
+                        <td>AINA ASYIQIN BINTI MOHAMAD ZAKI </td>
+                        <td>B031810289</td>
+                        <td>9/17/2019 2:21:12 PM</td>
+                        <td>QR</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>42</td>
+                        <td>TAN ZHI ZHONG </td>
+                        <td>B031810194</td>
+                        <td>9/17/2019 2:20:56 PM</td>
+                        <td>QR</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>43</td>
+                        <td>SAIFUL MIRZA BIN SHUBLI </td>
+                        <td>B031810370</td>
+                        <td>9/17/2019 2:20:19 PM</td>
+                        <td>QR</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
         <input type="hidden" id="TotcustId" name="TotcustId">
-    <script>
+        <script>
 
 
-function startTime() {
-    var today = new Date();
-    var h = today.getHours();
-    var m = today.getMinutes();
-    var s = today.getSeconds();
-    m = checkTime(m);
-    s = checkTime(s);
-             var t = setTimeout(startTime, 500);
-             if ((s == "20") || (s == "40") || (s == "10")){
-                 var kk =  Math.floor(Math.random() * 1000); 
-                 var mm = kk + "" + s + "" + m + "" + h;
-                // test();
-             }
-}
-function checkTime(i) {
-    if (i < 10) {i = "0" + i}; 
-    return i;
-}
+            function startTime() {
+                var today = new Date();
+                var h = today.getHours();
+                var m = today.getMinutes();
+                var s = today.getSeconds();
+                m = checkTime(m);
+                s = checkTime(s);
+                var t = setTimeout(startTime, 500);
+                if ((s == "20") || (s == "40") || (s == "10")) {
+                    var kk = Math.floor(Math.random() * 1000);
+                    var mm = kk + "" + s + "" + m + "" + h;
+                    // test();
+                }
+            }
+            function checkTime(i) {
+                if (i < 10) { i = "0" + i };
+                return i;
+            }
 
 
-         function AddTwoNumbersx(mm) {
-        //     var firstNumber = mm; //document.getElementById('txtTotal');
-            PageMethods.AddTwoNumbersx( mm, onSucceedx, onErrorx);
-        }
+            function AddTwoNumbersx(mm) {
+                //     var firstNumber = mm; //document.getElementById('txtTotal');
+                PageMethods.AddTwoNumbersx(mm, onSucceedx, onErrorx);
+            }
 
-        // On Success
-         function onSucceedx(results, currentContext, methodName) {
-            
-             document.getElementById('Label1').innerHTML = results[1]; 
-             
-        }
+            // On Success
+            function onSucceedx(results, currentContext, methodName) {
 
-        // On Error
-         function onErrorx(results, currentContext, methodName) {
-             alert(results);
-           
-         }
+                document.getElementById('Label1').innerHTML = results[1];
 
+            }
 
+            // On Error
+            function onErrorx(results, currentContext, methodName) {
+                alert(results);
 
-
-
-
-    </script>
+            }
 
 
 
 
-  <span id="Timer1" style="visibility:hidden;display:none;"></span> 
+
+
+        </script>
 
 
 
 
-         <br>
-         <br>
+        <span id="Timer1" style="visibility:hidden;display:none;"></span>
 
 
 
 
-    
+        <br>
+        <br>
 
-<script type="text/javascript">
-//<![CDATA[
-Sys.Application.add_init(function() {
-    $create(Sys.UI._Timer, {"enabled":true,"interval":5000,"uniqueID":"Timer1"}, null, null, $get("Timer1"));
-});
+
+
+
+
+
+        <script type="text/javascript">
+            //<![CDATA[
+            Sys.Application.add_init(function () {
+                $create(Sys.UI._Timer, { "enabled": true, "interval": 5000, "uniqueID": "Timer1" }, null, null, $get("Timer1"));
+            });
 //]]>
-</script>
-</form>
+        </script>
+    </form>
 
 
-</body></html>
+</body>
+
+</html>
