@@ -546,8 +546,6 @@
                                     document.getElementById('TextBox4').value = results[0];
                                     document.getElementById("Label6").style.color = "Black";
                                     document.getElementById("Button4y").focus();
-
-
                                 }
                             }
 
@@ -588,45 +586,34 @@
                                     PageMethods.SimpanPen(firstNumber, firstNumber2, kodcombo, Kategori, onSucceedx1xx, onErrorx1xx);
                                 }
                                 // }
-
                             }
 
                             function onSucceedx1xx(results, currentContext, methodName) {
                                 alert(results[0]);
                                 reloadkuliahpensyarah();
                                 ClearPen();
-
                             }
 
                             // On Error
                             function onErrorx1xx(results, currentContext, methodName) {
                                 alert(results);
-
                             }
 
 
 
 
                             function HapusPen(kodsubject) {
-
                                 //  var mindex = $('select#cmbTripName').prop('selectedIndex', optionIndex);
                                 //    alert(kodsubject);
                                 if (confirm('Anda pasti hapus data untuk Kuliah ID=' + kodsubject)) {
-
                                     PageMethods.HapusPen(kodsubject, onSucceedx1xxh, onErrorx1xxh);
-
-
-
                                     function onSucceedx1xxh(results, currentContext, methodName) {
                                         alert(results[0]);
                                         reloadkuliahpensyarah();
-
                                     }
-
                                     // On Error
                                     function onErrorx1xxh(results, currentContext, methodName) {
                                         alert(results);
-
                                     }
                                 }
                             }
@@ -827,10 +814,8 @@
 
                             function ValidateNumberOnly() {
                                 // alert(event.keyCode);
-
                                 if ((event.keyCode < 48 || event.keyCode > 57)) {
                                     // if (event.keyCode == 46) {
-
                                     //} else {
                                     event.returnValue = false;
                                     // }
@@ -842,19 +827,9 @@
 
 
                         <p>
-
-
-
                             <textbox id="TextBox4" visible="false" width="0px">
-
                             </textbox>
                         </p>
-
-
-
-
-
-
 
                         <script type="text/javascript">
                             //<![CDATA[
