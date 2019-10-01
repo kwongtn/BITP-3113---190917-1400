@@ -492,13 +492,16 @@
                                 alert(results);
                                 console.log(results);
                             }
+
                             function startTime2() {
                                 var today = new Date();
                                 var h = today.getHours();
                                 var m = today.getMinutes();
                                 var s = today.getSeconds();
+                                // Converts single digit time to double digit.
                                 m = checkTime(m);
                                 s = checkTime(s);
+                                // Outputs a random integer <1000
                                 var kk = Math.floor(Math.random() * 1000);
                                 var mm = kk + "" + s + "" + m + "" + h;
                                 AddTwoNumbers(mm);
@@ -633,9 +636,6 @@
                                 PageMethods.Simpan(firstNumber.value, onSucceedx1, onErrorx1);
 
                             }
-
-
-
 
 
                             // On Success
@@ -777,8 +777,6 @@
 
                                     return true;
                                 }
-
-
                             }
                             function ClearMessage() {
                                 //  alert('ooooo');
